@@ -24,7 +24,7 @@
   </p>
 </div>
 
-All the data is scraped from the Eurostreaming website using my [own API](https://github.com/Matt0550/EurostreamingAPI-scraping) and is not affiliated with Eurostreaming in any way. This project is for educational purposes only. I do not condone piracy in any way. Please use this project responsibly.
+All the data is scraped from the Eurostreaming website using my [**own API**](https://github.com/Matt0550/EurostreamingAPI-scraping) and is not affiliated with Eurostreaming in any way. This project is for educational purposes only. I do not condone piracy in any way. Please use this project responsibly.
 
 Copyright and all rights belong to the respective owners.
 
@@ -43,11 +43,11 @@ https://github.com/user-attachments/assets/38c202f8-6bcc-4983-8847-cf5aaf0d9d2a
 ## TO-DO
 - [ ] Notifications for new episodes
 - [ ] Categories
-- [ ] Docker support
+- [x] Docker support
 
 
 ## Public instance of the Bot
-At the moment, I can't provide a public instance of the bot because scraping is not a good practice and it's not allowed by the Eurostreaming website. I don't want to get in trouble with them, so I can't provide a public instance of the bot. Sorry for the inconvenience.
+**Currently, I’m unable to provide a public instance of the bot because web scraping is not permitted by the Eurostreaming website and is considered unethical. To avoid any potential issues or conflicts, I’ve decided not to make the bot publicly accessible. I apologize for any inconvenience this may cause and appreciate your understanding.**
 
 ## Environment Variables
 | Variable | Description | Default |
@@ -78,7 +78,7 @@ services:
       - webserver_debug=False
       - report_errors_owner=True # Report errors to the owner.
       - secret_key=abc123    # Random string
-      - scraping_api_url=http://localhost:8000
+      - scraping_api_url=http://localhost:8000 # INFO: https://github.com/Matt0550/EurostreamingAPI-scraping
       - PUID=1000     # UID of the user inside the container
       - PGID=1000     # GID of the user inside the container
     ports:
@@ -121,12 +121,13 @@ Go to the project directory
 
 OPTIONAL: use docker to build the image
 
+If you don't want to use docker, you can just go ahead and skip this step.
+Otherwise, change the `image` in `docker-compose.yml` with the image name you used.
+Run the container with `docker-compose up -d`
+
 ```bash
   docker build -t Eurostreaming-telegramBot .
 ```
-If you don't want to use docker, skip this step.
-Else, change the `image` in `docker-compose.yml` with the image name you used.
-Run the container with `docker-compose up -d`
 
 Install dependencies
 
@@ -134,21 +135,21 @@ Install dependencies
   pip install -r requirements.txt
 ```
 
-Start the REST API (after setting the environment variables)
+Start the REST API (after setting the **environment variables**)
 
 ```bash
-  cd api
+  cd src
   python main.py
 ```
 
-## Help - feedback
+## Help - Feedback
 You can contact me on:
 
-Discord: https://go.matteosillitti.it/discord
+Discord: https://matt05.it/discord
 
-Telegram: https://go.matteosillitti.it/telegram
+Telegram: https://matt05.it/telegram
 
-Mail: <a href="mailto:mail@matteosillitti.it">me@matteosillitti.it</a>
+Mail: <a href="mailto:mail@matteosillitti.com">mail@matteosillitti.com</a>
 
 ## License
 
@@ -173,6 +174,6 @@ Mail: <a href="mailto:mail@matteosillitti.it">me@matteosillitti.it</a>
 [license-shield]: https://img.shields.io/github/license/Matt0550/Eurostreaming-telegramBot.svg?style=for-the-badge
 [license-url]: https://github.com/Matt0550/Eurostreaming-telegramBot/blob/master/LICENSE
 [discord-shield]: https://img.shields.io/discord/828990499507404820?style=for-the-badge
-[discord-url]: https://go.matteosillitti.it/discord
+[discord-url]: https://matt05.it/discord
 [docker-shield]: https://img.shields.io/docker/pulls/matt0550/eurostreaming_telegrambot?style=for-the-badge
 [docker-url]: https://hub.docker.com/r/matt0550/eurostreaming_telegrambot
